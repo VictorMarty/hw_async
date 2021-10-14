@@ -29,10 +29,23 @@ module.exports = function (Homework) {
                 };
         });
     };
+    const less = async (a,b) => {
+        return new Promise((resolve) => {
+            Homework.less(a,b,resolve)
+        },
+        (reject)=> {
+            reject(new Error("Failed to compare values"));
+        })
+    }
+    const add = async (a,b) => {
+        return new Promise((resolve) => {
+            Homework.add(a,b,resolve)
+        })
+    }
     return async (array, fn, initialValue, cb) => {
         let acc = initialValue;
-        const length = await getLength(array);
-        for (let index = 0; index < length; index++) {
+        const length= await getLength(array);
+        for (let index = 0; await less(index,length); index = await add(index,1)) {
             let item = await getItem(array, index);
             acc = await accumulate(acc, item, index, array, fn);
         }
