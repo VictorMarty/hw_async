@@ -1,0 +1,18 @@
+{
+  "name": "hw_async",
+  "version": "1.0.0",
+  "description": "homework Async of Yandex School",
+  "main": "soluton/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "callback",
+    "hell"
+  ],
+  "author": "Victor Martynov",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  }
+}
